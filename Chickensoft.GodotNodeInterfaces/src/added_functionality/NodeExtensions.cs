@@ -456,6 +456,7 @@ public static class NodeExtensions {
     Func<Node, T> ifNode
   ) {
     if (
+      RuntimeContext.IsTesting &&
       caller is IFakeNodeTreeEnabled obj &&
       obj.FakeNodes is FakeNodeTree fakeNodeTree
     ) {
